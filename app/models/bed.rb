@@ -1,3 +1,4 @@
 class Bed < ApplicationRecord
-  belongs_to :hospital_id
+  belongs_to :user
+  has_many :bookings
 end
