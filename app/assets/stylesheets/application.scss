@@ -11,3 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+@import url(https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700;800&display=swap);
+$base-font: 'Alegreya', Sans;
+$header-font: 'Alegreya', Sans;
