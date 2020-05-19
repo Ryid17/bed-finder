@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Bed list</h1>
+  <ul>
+   <% @beds.each do |bed| %>
+   <li><%= link_to "#{bed.id} #{bed.category}", bed_path(bed)  %></li>
+   <% end %>
+  </ul>
+</div>
