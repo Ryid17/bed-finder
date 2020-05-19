@@ -13,3 +13,5 @@ category = ["child", "adult", "elderly" ]
 5.times do
   Bed.create(category: category.sample, user: User.first)
 end
+
+
