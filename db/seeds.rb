@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Bed.destroy_all
+User.create(email: "user@test.com", password: "123456")
+category = ["child", "adult", "elderly" ]
+5.times do
+  Bed.create(category: category.sample, user: User.first)
+end
