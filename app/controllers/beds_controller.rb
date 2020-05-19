@@ -1,5 +1,5 @@
 class BedsController < ApplicationController
-  before_action :set_bed, only: [:new, :create, :show, :destroy]
+  before_action :set_bed, only: [:show, :destroy]
 
   def index
     @beds = Bed.all
@@ -9,6 +9,7 @@ class BedsController < ApplicationController
   end
 
   def new
+    check_role
     @bed = Bed.new
   end
 
@@ -40,4 +41,12 @@ class BedsController < ApplicationController
   def bed_params
     params.require(:bed).permit(:category)
   end
+
+  def check_role
+    unless current_user.role == "provider"
+      redirect_to root_path, alert: "access denied"
+    end
+  end
 end
+
+
