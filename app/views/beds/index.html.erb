@@ -1,8 +1,14 @@
 <div class="container">
   <h1>Bed list</h1>
-  <ul>
-   <% @beds.each do |bed| %>
-   <li><%= link_to "#{bed.id} #{bed.category}", bed_path(bed)  %></li>
-   <% end %>
-  </ul>
+  <div class="row">
+    <% @beds.each do |bed| %>
+      <div class="col-md-3">
+        <%= link_to bed_path(bed) do%>
+          <div class= "card" style="background-image: url(<%= bed.photo.attached? ? url_for(bed.photo) : image_path("homepage.png")%>);">
+            <h1><%=bed.category%></h1>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
