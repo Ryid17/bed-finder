@@ -1,2 +1,15 @@
-<h1>Beds#new</h1>
-<p>Find me in app/views/beds/new.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <br>
+      <h1>List your bed</h1>
+      <p>Fill out the form below to list your bed</p>
+      <br>
+      <%= simple_form_for @bed do |f| %>
+      <%= f.input :category %>
+      <%= f.input :city %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
