@@ -22,8 +22,9 @@ class BedsController < ApplicationController
 
   def create
     @bed = Bed.new(bed_params)
+    @bed.user = current_user
     if @bed.save
-      redirect_to beds_path
+      redirect_to beds_path, alert: "listing created"
     else
       render :new
     end
@@ -46,7 +47,7 @@ class BedsController < ApplicationController
   end
 
   def bed_params
-    params.require(:bed).permit(:category)
+    params.require(:bed).permit(:category, :city)
   end
 
   def check_role
