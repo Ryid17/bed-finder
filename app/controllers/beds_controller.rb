@@ -3,9 +3,16 @@ class BedsController < ApplicationController
 
   def index
     @beds = Bed.all
+    if params[:category].present?
+      @beds = Bed.where(category: params[:category])
+    end
+    if params[:city].present?
+      @beds = Bed.where(city: params[:city])
+    end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
