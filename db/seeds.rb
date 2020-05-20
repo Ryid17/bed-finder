@@ -11,8 +11,9 @@ Bed.destroy_all
 User.create(email: "consumer@test.com", password: "123456", role: "consumer")
 User.create(email: "provider@test.com", password: "123456", role: "provider")
 category = ["child", "adult", "elderly" ]
+city = ["London", "Birmingham", "Brighton" ]
 5.times do
-  Bed.create(category: category.sample, user: User.first)
+  Bed.create(category: category.sample, user: User.first, city: city.sample)
 end
 
 

@@ -1,19 +1,20 @@
 <div class="container">
-  <h1><%= "#{@bed.id} - #{@bed.category}" %></h1>
-    <div class="row">
-      <div class="col-6">
-        <div class="container">
-          <img src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 400px alt="bed picture">
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="container">
-          <img src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 400px alt="bed picture">
-        </div>
-      </div>
+  <div class="p-2">
+    <h1><%= "#{@bed.id} - #{@bed.category}" %></h1>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <img class="p-1" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 400px alt="bed picture">
     </div>
-    <br>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi molestias sunt consequatur, animi, obcaecati ab similique expedita dolor magnam suscipit quo. Repudiandae sapiente quia quod dolores obcaecati corporis commodi harum!</p>
+    <div class="col-12 col-md-6">
+      <img class="p-1" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 400px alt="bed picture">
+    </div>
+  </div>
+  <div class="p-4">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi molestias sunt consequatur, animi, obcaecati ab similique expedita dolor magnam suscipit quo. Repudiandae sapiente quia quod dolores obcaecati corporis commodi harum!</p>
+  </div>
 </div>
+
+
 
 <%= render "shared/booking_form" %>

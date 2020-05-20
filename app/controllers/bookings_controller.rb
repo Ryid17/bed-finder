@@ -6,10 +6,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user_id = current_user.id
+    @booking.bed_id = params[:bed_id]
     if @booking.save
-      redirect_to bed_path(params[:booking_id])
+      redirect_to bed_path(params[:bed_id]), alert: "booking requested!"
     else
-      render :new
+      redirect_to bed_path(params[:bed_id]), alert: "request invalid, please try again"
     end
   end
 
@@ -18,4 +20,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date)
   end
+
 end
