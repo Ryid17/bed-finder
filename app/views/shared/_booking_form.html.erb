@@ -1,6 +1,10 @@
 <div class="container">
   <%= simple_form_for [@bed, @booking] do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.button :submit %>
+  <%= f.input :start_date,
+              as: :date,
+              html5: true,
+              label: "When are you starting to book this bed?",
+              required: true %>
+  <%= f.button :submit, "Request this bed", class: "btn btn-secondary"%>
   <% end %>
 </div>
