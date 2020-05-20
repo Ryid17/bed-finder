@@ -1,0 +1,36 @@
+.card-img-top {
+    height: 200px;
+    width: 356px;
+}
+
+.card-body {
+    width: 300px;
+}
+
+.card {
+    top: 50px;
+    display: flex;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.card-title {
+    font-family: Alegreya Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #434343;
+}
+
+.card-text {
+    font-family: Alegreya Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #737373;
+}
