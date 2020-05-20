@@ -1,20 +1,32 @@
-<div class="container">
+<div class="container d-block">
   <div class="p-2">
     <h1><%= "#{@bed.id} - #{@bed.category}" %></h1>
   </div>
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <img class="p-1" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 400px alt="bed picture">
-    </div>
-    <div class="col-12 col-md-6">
-      <img class="p-1" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 400px alt="bed picture">
+  <div class="p-2">
+    <div class="row">
+      <div class="col-md-6 d-flex">
+        <img class="p-1 m-0 align-self-center" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 100% alt="bed picture">
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-6 p-0 m-0">
+            <img class="p-1 m-0" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 100% alt="bed picture">
+            <img class="p-1 m-0" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 100% alt="bed picture">
+          </div>
+          <div class="col-6 p-0 m-0">
+            <img class="p-1 m-0" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 100% alt="bed picture">
+            <img class="p-1 m-0" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 100% alt="bed picture">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="p-4">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi molestias sunt consequatur, animi, obcaecati ab similique expedita dolor magnam suscipit quo. Repudiandae sapiente quia quod dolores obcaecati corporis commodi harum!</p>
+    <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi molestias sunt consequatur, animi, obcaecati ab similique expedita dolor magnam suscipit quo. Repudiandae sapiente quia quod dolores obcaecati corporis commodi harum!</p>
   </div>
 </div>
 
+<div class="booking-form bg-white pb-4">
+  <%= render "shared/booking_form" %>
+</div>
 
-
-<%= render "shared/booking_form" %>
