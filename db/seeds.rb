@@ -8,7 +8,8 @@
 
 User.destroy_all
 Bed.destroy_all
-User.create(email: "user@test.com", password: "123456")
+User.create(email: "consumer@test.com", password: "123456", role: "consumer")
+User.create(email: "provider@test.com", password: "123456"), role: "provider")
 category = ["child", "adult", "elderly" ]
 5.times do
   Bed.create(category: category.sample, user: User.first)
