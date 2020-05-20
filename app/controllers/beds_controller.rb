@@ -47,7 +47,7 @@ class BedsController < ApplicationController
   end
 
   def bed_params
-    params.require(:bed).permit(:category, :city)
+    params.require(:bed).permit(:category, :city, :photo)
   end
 
   def check_role
