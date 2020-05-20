@@ -24,7 +24,7 @@ class BedsController < ApplicationController
     @bed = Bed.new(bed_params)
     @bed.user = current_user
     if @bed.save
-      redirect_to beds_path, alert: "listing created"
+      redirect_to beds_path, alert: "LISTING CREATED"
     else
       render :new
     end
@@ -52,7 +52,7 @@ class BedsController < ApplicationController
 
   def check_role
     unless current_user.role == "provider"
-      redirect_to root_path, alert: "access denied"
+      redirect_to root_path, alert: "ACCESS DENIED"
     end
   end
 end
