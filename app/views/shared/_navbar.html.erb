@@ -9,8 +9,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-       <li class="nav-item active">
-          <%= link_to "My Bookings", "#", class: "nav-link" %>
+        <li class="nav-item active">
+          <% if current_user.role == 'consumer' %>
+            <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
+          <% else %>
+            <%= link_to "My Bookings", "#", class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "List Bed", new_bed_path, class: "nav-link" %>

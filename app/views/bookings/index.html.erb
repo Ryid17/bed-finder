@@ -1,0 +1,11 @@
+<div class="container w-75">
+  <ul class="list-group">
+    <% @bookings.each do |booking| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <% @bed = Bed.find(booking.bed_id) %>
+        <%= @bed.category %>
+        <span class="badge badge-primary badge-pill"><%= booking.start_date %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
