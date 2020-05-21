@@ -3,11 +3,21 @@ class BedsController < ApplicationController
 
   def index
     @beds = Bed.all
-    if params[:category].present?
-      @beds = Bed.where(category: params[:category])
+    @markers = Bed.geocoded.map do |bed|
+      {
+        lat: bed.latitude,
+        lng: bed.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { bed: bed })
+        # image_url: helpers.asset_url('/app/assets/images/bf-logo.png')
+
+      }
     end
-    if params[:city].present?
-      @beds = Bed.where(city: params[:city])
+    # @beds = Bed.all
+    if params[:category].present?
+      @beds = @beds.where(category: params[:category])
+    end
+    if params[:address].present?
+      @beds = @beds.near(params[:address], 20)
     end
   end
 
@@ -50,7 +60,7 @@ class BedsController < ApplicationController
   end
 
   def bed_params
-    params.require(:bed).permit(:category, :city, :photo)
+    params.require(:bed).permit(:category, :ward, :address, :photo)
   end
 
   def check_role

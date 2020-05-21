@@ -12,15 +12,16 @@ User.destroy_all
 
 User.create(email: "consumer@test.com", password: "123456", role: "consumer")
 User.create(email: "provider@test.com", password: "123456", role: "provider")
-category = ["child", "adult", "elderly"]
-city = ["London", "Birmingham", "Brighton"]
-# bed_photo = "../assets/images/text_luxury_bed.jpg"
-image_path = File.join(File.dirname(__dir__), "app/assets/images/test_luxury_bed.jpg")
-
-5.times do
-  bed = Bed.create(category: category.sample, user: User.first, city: city.sample)
-  bed.photo.attach(io: File.open(image_path), filename: 'test_luxury_bed.jpg')
-  bed.save
-end
+Bed.create(category: 'Dimentia', user: User.first, ward: 'Helen', address: "Gatehouse Ln, Goddards Green, Hassocks BN6 9LE")
+Bed.create(category: 'Dimentia', user: User.first, ward: 'Edith', address: "Butler's Green Rd, Haywards Heath RH16 4BE")
+Bed.create(category: 'Acute', user: User.first, ward: 'Barnsley', address: "Nevill Ave, Hove BN3 7HY")
+Bed.create(category: 'Acute', user: User.first, ward: 'Romeo', address: "Martyrs Ave, Crawley RH11 7EJ")
+Bed.create(category: 'Autism', user: User.first, ward: 'Elizabeth', address: "14-18 New Church Rd, Hove BN3 4FH")
+Bed.create(category: 'Autism', user: User.first, ward: 'George', address: "61A Cromwell Ave, Highgate, London N6 5HP")
+Bed.create(category: 'PTSD', user: User.first, ward: 'Joseph', address: "11-19 Lisson Grove, Marylebone, London NW1 6SH")
+Bed.create(category: 'PTSD', user: User.first, ward: 'Gregory', address: "Cherington Rd, Hanwell, London W7 3HL")
+Bed.create(category: 'Rehabillitation', user: User.first, ward: 'Roxanne', address: "25 Vincent Dr, Birmingham B15 2FG")
+Bed.create(category: 'Rehabillitation', user: User.first, ward: 'Timothy', address: "The Oleaster, 6 Mindelsohn Way, Birmingham B15 2SY")
+Bed.create(category: 'Dimentia', user: User.first, ward: 'Simon', address: "21 Woodbourne Rd, Harborne, Birmingham B17 8BY")
 
 
