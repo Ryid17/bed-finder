@@ -3,37 +3,34 @@
   <div class="d-flex align-items-start">
     <div class="cards p-3">
       <% @beds.each do |bed| %>
-        <div class="card-product mb-3 p-3">
-          <% if bed.photo.attached? %>
-            <%= cl_image_tag bed.photo.key %>
-          <% else %>
-            <img class="rounded" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <% end %>
-          <div class="card-product-infos">
-            <h2><%=bed.category%></h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
+        <%= link_to bed_path(bed) do %>
+          <div class="card-product mb-3 p-3">
+            <% if bed.photo.attached? %>
+              <%= cl_image_tag bed.photo.key %>
+            <% else %>
+              <img class="rounded" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <% end %>
+            <div class="card-product-infos">
+              <h2><%=bed.category%></h2>
+              <p><strong><%= bed.ward %></strong> - <%= bed.address %></p>
+            </div>
           </div>
-        </div>
-
-      <% end %>
-
-    </div>
-
-    <div id="map" class="rounded"
-    style= "height: 80vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-          <p>
+            <p>
             <div class="btn btn-primary">
-              <%= link_to "Delete", bed, method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %> |
+              <%= link_to "Delete", bed_path(bed), method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %>
               <%= link_to "Edit", edit_bed_path(bed), :class => "btn" %>
             </div>
-          </p>
+            </p>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <div id="map" class="rounded"
+      style= "height: 80vh;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
 </div>
 
 
