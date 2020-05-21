@@ -31,13 +31,16 @@ class BedsController < ApplicationController
   end
 
   def edit
+    @bed = Bed.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    @bed = Bed.find(params[:id])
     @bed.destroy
+    redirect_to beds_path
   end
 
   private
