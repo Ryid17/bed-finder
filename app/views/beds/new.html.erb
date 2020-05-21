@@ -1,17 +1,16 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <br>
-      <h1>List your bed</h1>
-      <p>Fill out the form below to list your bed</p>
-      <br>
+  <div class="d-block p-4 w-75">
+    <h1>List your bed</h1>
+    <p>Fill out the form below to list your bed</p>
+    <div class="listing-form mt-4">
       <%= simple_form_for @bed do |f| %>
       <%= f.input :category %>
       <%= f.input :ward %>
       <%= f.input :address %>
-      <%= f.file_field :photo %>
-      <%= f.submit %>
+      <br> <%= f.button :file_field, :photo, as: :file %> </br>
+      <br> <%= f.button :submit, class: "btn btn-light border ml-2" %> </br>
       <% end %>
     </div>
   </div>
+
 </div>

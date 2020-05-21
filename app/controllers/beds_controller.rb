@@ -2,8 +2,8 @@ class BedsController < ApplicationController
   before_action :set_bed, only: [:show, :destroy]
 
   def index
-    @beds = Bed.geocoded
-    @markers = @beds.map do |bed|
+    @beds = Bed.all
+    @markers = Bed.geocoded.map do |bed|
       {
         lat: bed.latitude,
         lng: bed.longitude,

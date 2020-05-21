@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+Booking.destroy_all
 Bed.destroy_all
+User.destroy_all
+
 User.create(email: "consumer@test.com", password: "123456", role: "consumer")
 User.create(email: "provider@test.com", password: "123456", role: "provider")
 Bed.create(category: 'Dimentia', user: User.first, ward: 'Helen', address: "Gatehouse Ln, Goddards Green, Hassocks BN6 9LE")
