@@ -1,14 +1,14 @@
 <div class="container d-block">
-  <div class="p-2">
-    <h1><%= "#{@bed.ward}"%></h1>
-    <h2><%= "#{@bed.category}"%></h2>
+  <div class="p-3">
+    <h1 class="text-center"><%= "Ward name: #{@bed.ward}"%></h1>
+    <h2 class="text-center"><%= "Category: #{@bed.category}"%></h2>
   </div>
   <div class="pt-5 d-flex justify-content-center">
     <% if @bed.photo.attached? %>
       <%= cl_image_tag @bed.photo.key, width: 800, height: 500, crop: :fill, class:"shadow-sm rounded" %>
     <% end %>
   </div>
-  <div class="p-4">
+  <div class="pt-4 pr-4 pb-4 pl-0 text-left">
     <h2>Description</h2>
     <p class="font-weight-light">This is the perfect bed for patients that are looking for a safe place to recover. The staff are wonderfully attentive and have the patients needs at the forefront of their minds.</p>
   </div>
