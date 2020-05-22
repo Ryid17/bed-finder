@@ -13,11 +13,11 @@ User.destroy_all
 
 User.create(email: "consumer@test.com", password: "123456", role: "consumer")
 User.create(email: "provider@test.com", password: "123456", role: "provider")
-bed = Bed.new(category: 'Dimentia', user: User.first, ward: 'Helen', address: "Gatehouse Ln, Goddards Green, Hassocks BN6 9LE")
+bed = Bed.new(category: 'Dementia', user: User.first, ward: 'Helen', address: "Gatehouse Ln, Goddards Green, Hassocks BN6 9LE")
 file = URI.open('https://d35cnulyv0pa6p.cloudfront.net/products/images/2017/23350/9264_evario_protega_2016_12_004.jpg')
 bed.photo.attach(io: file, filename: 'seed-bed.jpg', content_type: 'image/jpg')
 bed.save
-bed = Bed.new(category: 'Dimentia', user: User.first, ward: 'Edith', address: "Butler's Green Rd, Haywards Heath RH16 4BE")
+bed = Bed.new(category: 'Dementia', user: User.first, ward: 'Edith', address: "Butler's Green Rd, Haywards Heath RH16 4BE")
 file = URI.open('https://cdn8.dissolve.com/p/D145_296_102/D145_296_102_1200.jpg')
 bed.photo.attach(io: file, filename: 'seed-bed.jpg', content_type: 'image/jpg')
 bed.save
@@ -53,7 +53,7 @@ bed = Bed.new(category: 'Rehabillitation', user: User.first, ward: 'Timothy', ad
 file = URI.open('https://images-na.ssl-images-amazon.com/images/I/71T2lZsnwSL._SL1146_.jpg')
 bed.photo.attach(io: file, filename: 'seed-bed.jpg', content_type: 'image/jpg')
 bed.save
-bed = Bed.new(category: 'Dimentia', user: User.first, ward: 'Simon', address: "21 Woodbourne Rd, Harborne, Birmingham B17 8BY")
+bed = Bed.new(category: 'Dementia', user: User.first, ward: 'Simon', address: "21 Woodbourne Rd, Harborne, Birmingham B17 8BY")
 file = URI.open('https://images-na.ssl-images-amazon.com/images/I/71T2lZsnwSL._SL1146_.jpg')
 bed.photo.attach(io: file, filename: 'seed-bed.jpg', content_type: 'image/jpg')
 bed.save

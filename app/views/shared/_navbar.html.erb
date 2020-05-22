@@ -13,7 +13,7 @@
           <% if current_user.role == 'consumer' %>
             <%= link_to "My Bookings", bookings_path, class: "nav-link text-primary" %>
           <% else %>
-            <%= link_to "My Bookings", "#", class: "nav-link text-primary" %>
+            <%= link_to "My Bookings", bookings_path, class: "nav-link text-primary" %>
           <% end %>
         </li>
         <li class="nav-item">
