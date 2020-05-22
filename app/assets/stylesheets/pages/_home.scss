@@ -23,12 +23,16 @@
   font-family: 'Work Sans', sans-serif;
 }
 
-p {
-  font-family: 'Work Sans', sans-serif;
+
+#centering-title {
+  font-family: Alegreya Sans;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
   line-height: 38px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  text-align: center;
 
   color: #000000;
 }
@@ -112,4 +116,13 @@ a:hover {
   background-color: #F4F4F4;
   border-color: #F4F4F4;
   color: black;
+}
+.booking-form.bg-white.pb-4 {
+  width:300px;
+  margin-left: 182px;
+  padding-top: 16px;
+
+}
+#centering-title {
+  font-family:'Work Sans', sans-serif;
 }
