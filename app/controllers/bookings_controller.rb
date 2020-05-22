@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     @booking.bed_id = params[:bed_id]
-    @booking.start_date = Datetime.now +1.week
+    @booking.start_date = DateTime.now +1.week
     if @booking.save
       redirect_to bookings_path, alert: "booking requested!"
     else
