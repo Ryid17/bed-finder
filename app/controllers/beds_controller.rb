@@ -3,21 +3,22 @@ class BedsController < ApplicationController
 
   def index
     @beds = Bed.all
-    @markers = Bed.geocoded.map do |bed|
-      {
-        lat: bed.latitude,
-        lng: bed.longitude,
-        # infoWindow: render_to_string(partial: "info_window", locals: { bed: bed })
-        # image_url: helpers.asset_url('/app/assets/images/bf-logo.png')
 
-      }
-    end
     # @beds = Bed.all
     if params[:category].present?
       @beds = @beds.where(category: params[:category])
     end
     if params[:address].present?
       @beds = @beds.near(params[:address], 20)
+    end
+    @markers = @beds.geocoded.map do |bed|
+      {
+        lat: bed.latitude,
+        lng: bed.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bed: bed })
+        # image_url: helpers.asset_url('/app/assets/images/bf-logo.png')
+
+      }
     end
   end
 
