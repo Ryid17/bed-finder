@@ -23,6 +23,7 @@
   font-family: 'Work Sans', sans-serif;
 }
 
+
 #centering-title {
   font-family: Alegreya Sans;
   font-style: normal;
@@ -61,4 +62,58 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+.card-product p {
+  font-size: 16px;
+  }
+
+.card-product h2 {
+  font-size: 20px;
+color: #0072CE;
+  }
+
+.card-product h2:hover {
+  color: #41B6E6;
+  text-decoration: none;
+}
+.btn-primary {
+  background-color: #0072CE;
+  border-color: #0072CE;
+}
+.btn-primary:hover {
+  background-color: #41B6E6;
+  border-color: #41B6E6;
+}
+a:hover {
+  text-decoration: none;
+}
+.btn-secondary {
+  background-color: #0072CE;
+  border-color: #0072CE;
+}
+.btn-secondary:hover {
+  background-color: #41B6E6;
+  border-color: #41B6E6;
+}
+.btn{
+  background-color: #0072CE;
+  border-color: #0072CE;
+  color: white;
+}
+.btn:hover{
+  background-color: #41B6E6;
+  border-color: #41B6E6;
+  color: white;
+}
+
+#bed_photo {
+  background-color: #F4F4F4;
+  border-color: #F4F4F4;
+  color: black;
+}
+.booking-form.bg-white.pb-4 {
+  width:300px;
+  margin-left: 182px;
+  padding-top: 16px;
+
 }
