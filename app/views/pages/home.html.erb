@@ -25,14 +25,6 @@
             <p><strong><%= bed.ward %></strong> - <%= bed.address %></p>
           </div>
         </div>
-        <p>
-          <div class="btn btn-primary">
-            <%= link_to "Delete", bed_path(bed), method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %>
-          </div>
-          <div class="btn btn-primary">
-            <%= link_to "Edit", edit_bed_path(bed), :class => "btn" %>
-          </div>
-        </p>
       <% end %>
     <% end %>
   </div>
