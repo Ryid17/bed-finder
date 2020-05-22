@@ -11,24 +11,24 @@
       <% if user_signed_in? %>
         <li class="nav-item active">
           <% if current_user.role == 'consumer' %>
-            <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
+            <%= link_to "My Bookings", bookings_path, class: "nav-link text-primary" %>
           <% else %>
-            <%= link_to "My Bookings", "#", class: "nav-link" %>
+            <%= link_to "My Bookings", "#", class: "nav-link text-primary" %>
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "List Bed", new_bed_path, class: "nav-link" %>
+          <%= link_to "List Bed", new_bed_path, class: "nav-link text-primary" %>
           </li>
           <li>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-primary" %>
         </li>
       <% else %>
       <li class="nav-item active">
-        <a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-primary" href="#">About us <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link text-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           How it works
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -37,7 +37,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">Register a bed</a>
+        <a class="nav-link text-primary active" href="#">Register a bed</a>
       </li>
     </ul>
     <a class="nav-item">

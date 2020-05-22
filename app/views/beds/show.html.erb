@@ -3,45 +3,10 @@
     <h1><%= "#{@bed.ward}"%></h1>
     <h2><%= "#{@bed.category}"%></h2>
   </div>
-  <div class="p-2">
-    <div class="row">
-      <div class="col-md-6 d-flex align-items-center">
-        <% if @bed.photo.attached? %>
-          <%= cl_image_tag @bed.photo.key, width: 250, height: 175, crop: :fill %>
-        <% end %>
-        <!-- <img class="p-1 m-0 align-self-center" src="https://www.weymouthstreethospital.com/wp-content/uploads/sites/2/2019/05/room1-1024x683.jpg" width = 100% alt="bed picture"> -->
-      </div>
-      <div class="col-md-6 d-flex">
-        <div class="row align-self-center">
-          <div class="col-6 p-0 m-0">
-            <div class="p-1 m-0" width=100%>
-              <% if @bed.photo.attached? %>
-                <%= cl_image_tag @bed.photo.key, width: 250, height: 175, crop: :fill %>
-              <% end %>
-            </div>
-            <div class="p-1 m-0" width=100%>
-              <% if @bed.photo.attached? %>
-                <%= cl_image_tag @bed.photo.key, width: 250, height: 175, crop: :fill %>
-              <% end %>
-            </div>
-          </div>
-          <div class="col-6 p-0 m-0">
-            <div class="p-1 m-0" width=100%>
-              <% if @bed.photo.attached? %>
-                <%= cl_image_tag @bed.photo.key, width: 250, height: 175, crop: :fill %>
-              <% end %>
-            </div>
-            <div class="p-1 m-0" width=100%>
-             <% if @bed.photo.attached? %>
-               <%= cl_image_tag @bed.photo.key, width: 250, height: 175, crop: :fill %>
-             <% end %>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
+  <div class="pt-5 d-flex justify-content-center">
+    <% if @bed.photo.attached? %>
+      <%= cl_image_tag @bed.photo.key, width: 800, height: 500, crop: :fill, class:"shadow-sm rounded" %>
+    <% end %>
   </div>
   <div class="p-4">
     <h2>Description</h2>
@@ -49,7 +14,7 @@
   </div>
 </div>
 
-<div class="booking-form bg-white pb-4">
+<div class="booking-form pb-4">
   <%= render "shared/booking_form" %>
 </div>
 <%= render 'shared/footer' %>
