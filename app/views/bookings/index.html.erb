@@ -1,15 +1,17 @@
 <div class="container w-75">
   <ul class="list-group">
     <% @bookings.each do |booking| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <%= booking.bed.category %>
-         <div class="btn btn-primary">
-              <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %>
-            </div>
-            <div class="btn btn-primary">
-                <%= link_to "Edit", edit_bed_booking_path(booking.bed, booking), :class => "btn" %>
-              </div>
-        <span class="badge badge-primary badge-pill"><%= booking.start_date %></span>
+      <li class="list-group-item d-flex justify-content-between align-items-center m-2">
+        <div class="category text-center font-weight-bold" style="width:80px;">
+          <%= booking.bed.category %>
+        </div>
+        <span class="badge badge-primary badge-pill p-3"><%= booking.start_date %></span>
+        <div class="btn btn-outline-primary text-primary">
+          <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %>
+        </div>
+        <div class="btn btn-outline-primary text-primary">
+          <%= link_to "Edit", edit_bed_booking_path(booking.bed, booking), :class => "btn" %>
+        </div>
       </li>
     <% end %>
   </ul>

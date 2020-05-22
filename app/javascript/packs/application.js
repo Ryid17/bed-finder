@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import Typed from 'typed.js';
 
 
 // Internal imports, e.g:
@@ -36,3 +37,12 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
 
+
+var options = {
+  strings: ['Bedfinder', '^1000 Find calm for your patients'],
+  typeSpeed: 40,
+  loop: false,
+  showCursor: false,
+};
+var typed = new Typed('.typed', options);
+console.log(typed)
