@@ -12,7 +12,7 @@
     <%= render "shared/searchbar" %>
   </div>
   <div class="container">
-    <p id="centering-title">Beds available in your area</p>
+    <h2 id="centering-title">Beds available in your area</h2>
     <% @beds.each do |bed| %>
       <%= link_to bed_path(bed) do %>
         <div class="card-product mb-3 p-3">
