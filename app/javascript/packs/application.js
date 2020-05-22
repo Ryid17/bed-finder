@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
 var options = {
   strings: ['Bedfinder', '^1000 Find calm for your patients'],
   typeSpeed: 40,
-  loop: false,
+  loop: true,
   showCursor: false,
 };
 var typed = new Typed('.typed', options);
