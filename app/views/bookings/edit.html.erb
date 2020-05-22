@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="d-block p-4 w-75">
+    <h1>Edit your booking</h1>
+    <p>Fill out the form below to edit your booking</p>
+    <div class="listing-form mt-4">
+      <%= simple_form_for [@bed, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <br> <%= f.button :submit, class: "btn btn-light border ml-2" %> </br>
+      <% end %>
+    </div>
+  </div>
+
+</div>
