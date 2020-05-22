@@ -3,54 +3,51 @@
 </head>
 
 <body>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
-  <div class="container">
-    <h1>Find calm for your patient</h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
+    <div class="container">
+      <h1>Find calm for your patient</h1>
+    </div>
   </div>
-</div>
-<div>
+  <div>
   <%= render "shared/searchbar" %>
   <div class="container">
-    <p>Beds available in your area<p>
-      <% @beds.each do |bed| %>
-        <%= link_to bed_path(bed) do %>
-          <div class="card-product mb-3 p-3">
-            <% if bed.photo.attached? %>
-              <%= cl_image_tag bed.photo.key %>
-            <% else %>
-              <img class="rounded" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <% end %>
-            <div class="card-product-infos">
-              <h2><%=bed.category%></h2>
-              <p><strong><%= bed.ward %></strong> - <%= bed.address %></p>
-            </div>
+    <p>Beds available in your area</p>
+    <% @beds.each do |bed| %>
+      <%= link_to bed_path(bed) do %>
+        <div class="card-product mb-3 p-3">
+          <% if bed.photo.attached? %>
+            <%= cl_image_tag bed.photo.key %>
+          <% else %>
+            <img class="rounded" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%=bed.category%></h2>
+            <p><strong><%= bed.ward %></strong> - <%= bed.address %></p>
           </div>
-            <p>
-            <div class="btn btn-primary">
-              <%= link_to "Delete", bed_path(bed), method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %>
-            </div>
-              <div class="btn btn-primary">
-                <%= link_to "Edit", edit_bed_path(bed), :class => "btn" %>
-              </div>
-            </p>
-        <% end %>
+        </div>
+        <p>
+          <div class="btn btn-primary">
+            <%= link_to "Delete", bed_path(bed), method: :delete, data: { confirm: "Are You Sure" }, :class => "btn" %>
+          </div>
+          <div class="btn btn-primary">
+            <%= link_to "Edit", edit_bed_path(bed), :class => "btn" %>
+          </div>
+        </p>
       <% end %>
+    <% end %>
   </div>
-</div>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Bedfinder is made with <i class="fas fa-heart"></i> @ Le Wagon by team Good Booking
+    </div>
   </div>
-  <div class="footer-copyright">
-    Bedfinder is made with <i class="fas fa-heart"></i> @ Le Wagon by team Good Booking
-  </div>
-</div>
-
 </body>
 
 
