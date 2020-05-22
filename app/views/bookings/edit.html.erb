@@ -1,13 +1,9 @@
 <div class="container">
-  <div class="d-block p-4 w-75">
-    <h1>Edit your booking</h1>
-    <p>Fill out the form below to edit your booking</p>
-    <div class="listing-form mt-4">
-      <%= simple_form_for [@bed, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <br> <%= f.button :submit, class: "btn btn-light border ml-2" %> </br>
-      <% end %>
+  <h1 class="text-center m-4">Edit your booking</h1>
+  <p class="text-center m-4">Fill out the form below to edit your booking</p>
+  <div class="d-flex justify-content-center mt-5">
+    <div class="w-50">
+      <%= render "shared/booking_form" %>
     </div>
   </div>
-
 </div>
